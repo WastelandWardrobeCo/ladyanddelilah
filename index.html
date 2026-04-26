@@ -257,6 +257,35 @@
       .book-card { max-width: 340px; margin: 0 auto; }
     }
 
+
+
+    .btn.primary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn.primary::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      border: 1px solid rgba(210,106,51,.38);
+      opacity: .45;
+      animation: signalPulse 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes signalPulse {
+      0%, 100% { opacity: .22; box-shadow: 0 0 0 rgba(210,106,51,0); }
+      50% { opacity: .75; box-shadow: 0 0 28px rgba(210,106,51,.20); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .book-card a.cover-link { transition: none; }
+      .btn.primary::after { animation: none; }
+    }
+
     @media (max-width: 720px) {
       .field-board, .sigils { grid-template-columns: 1fr; }
     }
@@ -278,7 +307,7 @@
       <a class="brand" href="index.html">Lady &amp; Delilah</a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#field-notes">Field Notes</a>
-        <a href="chapter1.html">Free Chapter</a>
+        <a href="chapter1.html">Get a Taste</a>
         <a href="#books" class="book-link">Books</a>
         <a href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">TikTok</a>
         <a href="https://systemaobscura.co" target="_blank" rel="noopener noreferrer">Systema Obscura</a>
@@ -307,7 +336,7 @@
 
           <div class="button-row">
             <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Start the Hunt</a>
-            <a class="btn" href="chapter1.html">Take a Taste</a>
+            <a class="btn" href="chapter1.html">Get a Taste</a>
             <a class="btn" href="#field-notes">Read the Fragments</a>
             <a class="btn" href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">Watch the Signal</a>
           </div>
@@ -328,18 +357,18 @@
           <div class="entry-grid">
             <div>
               <p class="section-label">Recovered Entry</p>
-              <h2 class="section-title">Read the First Battle Free</h2>
+              <h2 class="section-title">Get a Taste</h2>
               <p class="section-copy">
-                Before the white forest. Before the larger record. There was a road, a wrong fire, and a camp that mistook bait for control.
+                Before the white forest. Before the larger record. There was a road, a wrong fire, and the first moment the hunt became visible.
               </p>
 
               <div class="entry-card">
                 <h3>Chapter One: Five Is Enough</h3>
                 <p>
-                  The first encounter introduces the rule that follows Delilah everywhere: five arrows, no waste, no excuses.
+                  A short recovered sample from the first encounter: five arrows, no waste, no excuses.
                 </p>
                 <div class="button-row">
-                  <a class="btn primary" href="chapter1.html">Open the Record</a>
+                  <a class="btn primary" href="chapter1.html">Get a Taste</a>
                   <a class="btn" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Continue on Amazon</a>
                 </div>
               </div>
