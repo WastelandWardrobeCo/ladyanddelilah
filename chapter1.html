@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Read Chapter One of Lady & Delilah by David McNeal. A hunter. A dire wolf. Five arrows. One knife." />
+  <title>Read Chapter One | Lady & Delilah</title>
+  <style>
+    :root {
+      --bg: #020202;
+      --bg-2: #090604;
+      --panel: rgba(255,255,255,0.045);
+      --panel-2: rgba(255,255,255,0.027);
+      --line: rgba(255,255,255,0.12);
+      --soft-line: rgba(255,255,255,0.065);
+      --text: #eee7de;
+      --muted: #b5aa9d;
+      --dim: #776f66;
+      --accent: #d26a33;
+      --accent-2: #9f2f1e;
+      --danger: #6f1710;
+      --shadow: 0 24px 90px rgba(0,0,0,.72);
+      --radius: 28px;
+      --radius-lg: 42px;
+      --max: 980px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: var(--serif);
+      line-height: 1.72;
+      background:
+        radial-gradient(circle at 16% 0%, rgba(111,23,16,0.36), transparent 24%),
+        radial-gradient(circle at 80% 16%, rgba(210,106,51,0.095), transparent 22%),
+        linear-gradient(180deg, #050302 0%, #020202 62%, #000 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,.55) 100%);
+      background-size: 100% 4px, 100% 100%;
+      z-index: 10;
+      mix-blend-mode: overlay;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(2,2,2,0.78);
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .topbar-inner {
+      width: min(calc(100% - 32px), 1140px);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-family: var(--sans);
+      font-size: .88rem;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: #f3f3f3;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-family: var(--sans);
+      font-size: .74rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #bbb2a7;
+    }
+
+    .nav a:hover, .nav a:focus-visible, .return-link:hover, .return-link:focus-visible { color: #fff; }
+
+    .nav .book-link {
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(210,106,51,.38);
+      background: linear-gradient(180deg, rgba(210,106,51,.22), rgba(111,23,16,.12));
+      color: #f7f2ea;
+      box-shadow: 0 0 28px rgba(210,106,51,.11);
+    }
+
+    .hero {
+      padding: 58px 0 28px;
+      text-align: center;
+    }
+
+    .eyebrow, .section-label {
+      margin: 0 0 12px;
+      font-family: var(--sans);
+      font-size: .74rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.5rem, 6vw, 5.2rem);
+      line-height: .95;
+      font-weight: 500;
+      color: #f7f1e8;
+    }
+
+    .dek {
+      margin: 0 auto 20px;
+      max-width: 58ch;
+      color: #d8cec2;
+      font-size: 1.12rem;
+    }
+
+    .alert-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(210,106,51,.42);
+      background: rgba(210,106,51,.12);
+      color: #f7d0b7;
+      font-family: var(--sans);
+      font-size: .74rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin: 10px 0 18px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.035);
+      color: #f7f2ea;
+      font-family: var(--sans);
+      font-size: .78rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.065);
+    }
+
+    .btn.primary {
+      background: linear-gradient(180deg, rgba(210,106,51,.24), rgba(111,23,16,.13));
+      border-color: rgba(210,106,51,.42);
+      box-shadow: 0 0 34px rgba(210,106,51,.13);
+    }
+
+    .reader-panel {
+      margin: 28px 0 46px;
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .reader-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 30% 0%, rgba(210,106,51,.11), transparent 26%),
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.26));
+    }
+
+    .reader-inner {
+      position: relative;
+      z-index: 2;
+      padding: clamp(24px, 5vw, 58px);
+    }
+
+    .chapter-head {
+      text-align: center;
+      margin: 0 auto 34px;
+      max-width: 720px;
+    }
+
+    .chapter-label {
+      margin: 0 0 8px;
+      font-family: var(--sans);
+      font-size: .72rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1;
+      font-weight: 500;
+      color: #f7f2ea;
+    }
+
+    .chapter-note {
+      margin: 0 auto;
+      color: #cfc6ba;
+      max-width: 56ch;
+      font-size: 1rem;
+    }
+
+    .chapter-text {
+      max-width: 70ch;
+      margin: 0 auto;
+      font-size: clamp(1.05rem, 2vw, 1.18rem);
+      color: #eee5db;
+    }
+
+    .chapter-text p {
+      margin: 0 0 1.05em;
+    }
+
+    .chapter-text p:first-child::first-letter {
+      float: left;
+      font-size: 4.6rem;
+      line-height: .78;
+      padding: .08em .12em 0 0;
+      color: var(--accent);
+    }
+
+    .end-card {
+      max-width: 720px;
+      margin: 42px auto 0;
+      padding: 26px;
+      text-align: center;
+      border: 1px solid rgba(210,106,51,.22);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(210,106,51,.09), rgba(255,255,255,.018));
+    }
+
+    .end-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+      line-height: 1.05;
+      font-weight: 500;
+    }
+
+    .end-card p {
+      margin: 0 auto 18px;
+      max-width: 48ch;
+      color: #d4cbc0;
+    }
+
+    .footer {
+      padding: 18px 0 60px;
+      color: #9f978c;
+      text-align: center;
+      font-size: .95rem;
+    }
+
+    .return-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: .76rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #f2ece3;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+      .nav { justify-content: flex-start; }
+      .button-row { flex-direction: column; }
+      .btn { width: 100%; }
+      .brand { letter-spacing: .24em; }
+      .chapter-text p:first-child::first-letter { font-size: 3.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Lady &amp; Delilah</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#books" class="book-link">Books</a>
+        <a href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://systemaobscura.co" target="_blank" rel="noopener noreferrer">Systema Obscura</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Recovered Entry / Book One</p>
+      <h1>Five Is Enough</h1>
+      <p class="dek">
+        The first battle. The first rule. The moment the road learns what Delilah and Lady are.
+      </p>
+      <div class="alert-line">Book One is included with Kindle Unlimited</div>
+      <div class="button-row">
+        <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Continue on Amazon</a>
+        <a class="btn" href="index.html">Return to the Road</a>
+      </div>
+    </section>
+
+    <section class="reader-panel" aria-label="Chapter One reading sample">
+      <div class="reader-inner">
+        <div class="chapter-head">
+          <p class="chapter-label">Chapter One</p>
+          <h2>Five Is Enough</h2>
+          <p class="chapter-note">
+            Free sample from <em>Lady &amp; Delilah</em>. Read the opening encounter, then continue the hunt on Amazon.
+          </p>
+        </div>
+
+        <article class="chapter-text">
+          <p>The fire was wrong.</p>
+          <p>Delilah saw that first.</p>
+          <p>Not the men.</p>
+          <p>Not the wagon.</p>
+          <p>Not the two bodies hanging from the dead traffic post where the old road split into three directions and went nowhere useful anymore.</p>
+          <p>The fire.</p>
+          <p>It burned too clean.</p>
+          <p>Out here, men who were cold built greedy fires. Men who were afraid built desperate ones. Men who wanted to be seen built them high and stupid, throwing sparks into the dark like invitations.</p>
+          <p>This fire sat low in a ring of broken concrete, fed in patient pieces, its light kept narrow. Enough to suggest shelter. Not enough to show how many men waited beyond it.</p>
+          <p>Bait, then.</p>
+          <p>Delilah lay flat on the ridge above the road, chin close to the stone, red hair tucked under the edge of her hood. Dust moved around her in pale lines. It did not touch the weapons.</p>
+          <p>Nothing did, if she could help it.</p>
+          <p>The bow lay beside her left hand. Flat black. No shine. No ornament. It drank the starlight instead of catching it.</p>
+          <p>The spear rested along her right side, dark shaft parallel to her body, blade wrapped in dull cloth until it was needed.</p>
+          <p>The knife rode low against her hip.</p>
+          <p>Other people had a name for that one.</p>
+          <p>Delilah did not.</p>
+          <p>Names gave things more room than they deserved.</p>
+          <p>Below, one of the men laughed.</p>
+          <p>Too loud.</p>
+          <p>He wanted the sound to carry. Wanted anyone listening to think the camp was careless. Four men at a fire. One wagon. Two dead travelers as warning or decoration, depending on what kind of rotten lived inside a man.</p>
+          <p>There were not four men.</p>
+          <p>Delilah had counted six before reaching the ridge. Two at the fire. One behind the wagon. One in the ditch with a crossbow. One inside the shell of a bus with most of the windows punched out. One somewhere she had not seen yet.</p>
+          <p>That one mattered.</p>
+          <p>The unseen one always did.</p>
+          <p>Lady had found him.</p>
+          <p>Delilah did not look for her. That would have been rude.</p>
+          <p>The dire wolf was already below and to the left, somewhere in the dark scrub where the broken road disappeared under thorn and rusted guardrail. Chest-high at the head, gray-black in the night, silent in a way that made silence seem clumsy. Lady did not wait for orders. She understood the shape of a hunt the way water understood downhill.</p>
+          <p>A nod helped.</p>
+          <p>A look helped.</p>
+          <p>Most times, Lady was already moving before Delilah gave either.</p>
+          <p>Tonight she had vanished the moment Delilah saw the hanging bodies.</p>
+          <p>Good girl, Delilah thought.</p>
+          <p>Then she corrected herself.</p>
+          <p>Not girl.</p>
+          <p>Partner.</p>
+          <p>Below, the man at the fire lifted a bottle and drank. He had a scar down one cheek and a necklace of finger bones resting on his coat. He turned toward the bodies and said something Delilah could not hear.</p>
+          <p>The others laughed.</p>
+          <p>That made the work easier.</p>
+          <p>Delilah reached back and touched the arrows one by one.</p>
+          <p>Five.</p>
+          <p>Exactly five.</p>
+          <p>No more.</p>
+          <p>The weaponsmith had argued the first time she told him.</p>
+          <p>&quot;A quiver holds more than five,&quot; he had said.</p>
+          <p>&quot;Mine does not.&quot;</p>
+          <p>&quot;That is not a reason.&quot;</p>
+          <p>&quot;It is the only one you need.&quot;</p>
+          <p>He had made the quiver anyway. Black leather. Tight draw. Five narrow seats, each fitted to the hand-lacquered shafts he built for her. The same dead black as the bow, the spear, the knife. The same refusal to shine.</p>
+          <p>Five arrows made a person honest.</p>
+          <p>If she carried twenty, she might accept a bad shot.</p>
+          <p>If she carried five, every shot had to deserve leaving her hand.</p>
+          <p>Below, the man in the ditch shifted.</p>
+          <p>There.</p>
+          <p>The crossbow lifted a little, just enough to show Delilah the shape of him. He watched the road, not the ridge. His mistake, but not an interesting one.</p>
+          <p>She set the first arrow to string.</p>
+          <p>The bow bent without sound.</p>
+          <p>Delilah breathed in.</p>
+          <p>Held nothing.</p>
+          <p>Holding was for people who believed stillness meant control.</p>
+          <p>She breathed out.</p>
+          <p>The arrow left.</p>
+          <p>The man in the ditch dropped before the string finished returning.</p>
+          <p>No cry.</p>
+          <p>No warning.</p>
+          <p>One.</p>
+          <p>The man behind the wagon heard the body settle. He turned his head, not enough to understand, enough to expose the line beneath his jaw.</p>
+          <p>The second arrow found it.</p>
+          <p>Two.</p>
+          <p>Now the camp changed.</p>
+          <p>The men at the fire stopped laughing. Scar-Cheek lowered the bottle. The man in the bus lifted a rifle through a broken window, aiming at the road because fear liked old habits.</p>
+          <p>Delilah shifted three inches along the ridge.</p>
+          <p>Not fast.</p>
+          <p>Correct.</p>
+          <p>The rifle fired.</p>
+          <p>The shot struck stone where she had been.</p>
+          <p>The third arrow crossed the basin and entered the dark window.</p>
+          <p>The rifle fell first.</p>
+          <p>Then the man.</p>
+          <p>Three.</p>
+          <p>Scar-Cheek shouted.</p>
+          <p>The fourth man at the fire did the smart thing. He kicked the fire apart, scattering embers into the dirt, killing the clean center of the light. Darkness folded in around the wagon.</p>
+          <p>Smart was not the same as safe.</p>
+          <p>Delilah stood.</p>
+          <p>That was when they saw her.</p>
+          <p>Not clearly.</p>
+          <p>Never clearly.</p>
+          <p>Just the shape on the ridge. A woman in dark clothes, bow in hand, black spear along her back now, hair moving slightly in the wind.</p>
+          <p>The firelight did not catch on her weapons.</p>
+          <p>It disappeared into them.</p>
+          <p>&quot;There!&quot; Scar-Cheek yelled.</p>
+          <p>He raised a pistol.</p>
+          <p>Delilah&#x27;s fourth arrow took his wrist.</p>
+          <p>Not his throat.</p>
+          <p>Not his eye.</p>
+          <p>His wrist.</p>
+          <p>The pistol spun away, and he screamed as if surprise hurt worse than the wound.</p>
+          <p>Four.</p>
+          <p>The other man ran.</p>
+          <p>Not away from Delilah.</p>
+          <p>Away from the fire.</p>
+          <p>Toward the left side of the road.</p>
+          <p>Toward the scrub.</p>
+          <p>Delilah did not follow him with the bow.</p>
+          <p>She only looked that way.</p>
+          <p>Lady came out of the dark before he reached it.</p>
+          <p>No growl. No warning. No dramatic leap thrown at the moon.</p>
+          <p>Just weight.</p>
+          <p>Just teeth.</p>
+          <p>Just the sudden correction of a man who had believed he was choosing a direction.</p>
+          <p>He hit the ground hard, Lady over him, one massive paw pinning his shoulder. Her head lowered. The man stopped moving before she bit down.</p>
+          <p>That was wisdom arriving late.</p>
+          <p>Delilah drew the fifth arrow.</p>
+          <p>Scar-Cheek staggered backward, clutching his ruined wrist. He looked from the ridge to Lady, then back again, trying to understand how two threats had become one shape around him.</p>
+          <p>He did not understand.</p>
+          <p>That was common.</p>
+          <p>&quot;Take whatever you want,&quot; he shouted. &quot;We got food. Fuel. Ammo.&quot;</p>
+          <p>Delilah stepped down from the ridge.</p>
+          <p>Not slid.</p>
+          <p>Not climbed.</p>
+          <p>Stepped.</p>
+          <p>Loose stones moved under her boots and found no advantage.</p>
+          <p>Scar-Cheek kept backing away.</p>
+          <p>&quot;You hear me? We got supplies.&quot;</p>
+          <p>She descended the slope with the bow still drawn. The fifth arrow waited at her cheek. Its point remained aimed at the ground between them, not at him.</p>
+          <p>That frightened him more.</p>
+          <p>Good.</p>
+          <p>&quot;You killed the two on the post,&quot; she said.</p>
+          <p>Her voice carried without rising.</p>
+          <p>Scar-Cheek glanced toward the bodies.</p>
+          <p>That was answer enough.</p>
+          <p>&quot;They had a girl with them,&quot; Delilah said.</p>
+          <p>His eyes changed.</p>
+          <p>There.</p>
+          <p>Delilah had been following that missing shape since noon. Three sets of tracks at first. Two adults. One small. Then blood. Then drag marks. Then the bodies.</p>
+          <p>The child&#x27;s tracks had ended near the wagon.</p>
+          <p>Not dead, then.</p>
+          <p>Not yet.</p>
+          <p>Scar-Cheek smiled because men like him mistook information for leverage.</p>
+          <p>&quot;Maybe,&quot; he said. &quot;Maybe not.&quot;</p>
+          <p>The fifth arrow left.</p>
+          <p>It struck the ground between his boots.</p>
+          <p>He flinched backward.</p>
+          <p>Delilah was already moving.</p>
+          <p>That was the thing people always got wrong when they told stories later.</p>
+          <p>They said she moved too fast.</p>
+          <p>She did not.</p>
+          <p>Fast men wasted motion and called it speed. Delilah removed everything that did not matter before the movement began. That left only the part people saw.</p>
+          <p>It looked like speed because there was nothing else in it.</p>
+          <p>The bow dropped from her hand and hung by its strap. The spear came free in the same motion, cloth slipping from the blade as if the dark had peeled open.</p>
+          <p>Scar-Cheek reached left-handed for the knife at his belt.</p>
+          <p>Too late.</p>
+          <p>The spear struck the inside of his forearm, not cutting deep, only redirecting. His hand opened. The knife fell.</p>
+          <p>Delilah pivoted, the spear shaft sliding through her grip. The butt end hit his knee.</p>
+          <p>He dropped.</p>
+          <p>She turned the fall into distance.</p>
+          <p>Her distance.</p>
+          <p>The spear point stopped beneath his chin.</p>
+          <p>He froze with his good hand halfway to the dirt.</p>
+          <p>Lady released the man under her paw. He did not run. He did not even breathe loudly.</p>
+          <p>Smart, Delilah thought.</p>
+          <p>Temporary, but smart.</p>
+          <p>Lady moved behind Scar-Cheek, not circling, not waiting for command. She took the gap between wagon and road, the only path that still pretended to be an escape.</p>
+          <p>Scar-Cheek heard her.</p>
+          <p>His shoulders tightened.</p>
+          <p>&quot;What are you?&quot; he whispered.</p>
+          <p>Delilah looked past him to the wagon.</p>
+          <p>Something inside it shifted.</p>
+          <p>Small.</p>
+          <p>Alive.</p>
+          <p>The spear point lowered.</p>
+          <p>&quot;Move,&quot; she said.</p>
+          <p>Scar-Cheek blinked.</p>
+          <p>He thought she meant away.</p>
+          <p>Most people did.</p>
+          <p>He lunged forward instead, throwing dirt with his bad hand, body twisting toward the knife on the ground. It was almost a good attempt. Pain made him crooked, but desperation made him quick.</p>
+          <p>Lady hit him from behind.</p>
+          <p>Not full weight.</p>
+          <p>Not enough to kill.</p>
+          <p>Enough to put him exactly where Delilah wanted him.</p>
+          <p>Face down.</p>
+          <p>Arm extended.</p>
+          <p>Neck open.</p>
+          <p>The spear entered the dirt beside his cheek and pinned his coat to the ground.</p>
+          <p>Not him.</p>
+          <p>The coat.</p>
+          <p>He still screamed.</p>
+          <p>Delilah crouched beside him.</p>
+          <p>&quot;Where is the girl?&quot;</p>
+          <p>His breath came fast. He tried to look at Lady and could not turn far enough.</p>
+          <p>&quot;In the wagon.&quot;</p>
+          <p>&quot;Alive?&quot;</p>
+          <p>&quot;Yes.&quot;</p>
+          <p>&quot;Hurt?&quot;</p>
+          <p>He hesitated.</p>
+          <p>Delilah twisted the spear a fraction, tightening the coat around his throat.</p>
+          <p>&quot;Hurt?&quot;</p>
+          <p>&quot;Not by me.&quot;</p>
+          <p>That was not the same as no.</p>
+          <p>Delilah stood.</p>
+          <p>The man Lady had pinned earlier made his final mistake.</p>
+          <p>He bolted.</p>
+          <p>Lady did not chase him.</p>
+          <p>She was already where running ended.</p>
+          <p>Three strides carried him past the dead fire and toward the open road. On the fourth, Lady crossed in front of him from behind the wagon. He tried to stop. Momentum did not forgive him.</p>
+          <p>Lady struck his chest with her shoulder.</p>
+          <p>He went down on his back.</p>
+          <p>The air left him.</p>
+          <p>Before he could reclaim it, Delilah&#x27;s spear point rested at the hollow of his throat.</p>
+          <p>She had not run after him.</p>
+          <p>She had only walked the shorter truth.</p>
+          <p>He stared up at her.</p>
+          <p>&quot;Please.&quot;</p>
+          <p>Delilah studied him.</p>
+          <p>He was young. Younger than Scar-Cheek. Old enough to have chosen the necklace of teeth tied around his wrist. Old enough to have helped hang the bodies. Old enough to have laughed.</p>
+          <p>&quot;No,&quot; she said.</p>
+          <p>The spear moved.</p>
+          <p>Clean.</p>
+          <p>Lady stepped away before the blood reached her paws.</p>
+          <p>Good partner.</p>
+          <p>Delilah returned to Scar-Cheek.</p>
+          <p>He had stopped screaming. His eyes had gone wide and wet. Fear improved his listening.</p>
+          <p>&quot;Open the wagon,&quot; she said.</p>
+          <p>&quot;You pinned me.&quot;</p>
+          <p>&quot;Yes.&quot;</p>
+          <p>&quot;I can&#x27;t.&quot;</p>
+          <p>Delilah looked at Lady.</p>
+          <p>Lady looked at the spear.</p>
+          <p>Delilah sighed.</p>
+          <p>&quot;Fair.&quot;</p>
+          <p>She pulled the spear free.</p>
+          <p>Scar-Cheek did not move until Lady&#x27;s teeth appeared near his ear.</p>
+          <p>Then he moved carefully.</p>
+          <p>Very carefully.</p>
+          <p>He limped to the wagon and fumbled with the latch. His right wrist hung useless. His left hand shook so badly the first key missed the lock twice.</p>
+          <p>Delilah let him have the mistakes.</p>
+          <p>Lady did not.</p>
+          <p>The third miss brought a low sound from her chest.</p>
+          <p>Not a growl exactly.</p>
+          <p>A suggestion.</p>
+          <p>The key found the lock.</p>
+          <p>The door opened.</p>
+          <p>The smell came first.</p>
+          <p>Fear.</p>
+          <p>Blood.</p>
+          <p>Old straw.</p>
+          <p>A child crouched in the back corner beneath a torn blanket, knees against her chest, eyes too large for her face. Ten, maybe. Eleven if hunger had stolen a year.</p>
+          <p>Delilah did not step closer.</p>
+          <p>Men had done enough looming for one night.</p>
+          <p>&quot;Your name?&quot; she asked.</p>
+          <p>The girl looked at Scar-Cheek.</p>
+          <p>Lady moved.</p>
+          <p>Scar-Cheek looked away.</p>
+          <p>&quot;Mara,&quot; the girl whispered.</p>
+          <p>&quot;Mara,&quot; Delilah said. &quot;Your people?&quot;</p>
+          <p>The girl&#x27;s mouth tightened.</p>
+          <p>She looked toward the traffic post.</p>
+          <p>Delilah nodded once.</p>
+          <p>Not soft.</p>
+          <p>Not cold.</p>
+          <p>True.</p>
+          <p>&quot;There is a settlement six miles east,&quot; Delilah said. &quot;Stone walls. Blue gate. Do you know it?&quot;</p>
+          <p>Mara nodded.</p>
+          <p>&quot;Can you walk?&quot;</p>
+          <p>Another nod.</p>
+          <p>Scar-Cheek laughed once.</p>
+          <p>It was a small, broken sound. A man trying to remind the world he still existed.</p>
+          <p>&quot;They won&#x27;t take her,&quot; he said. &quot;Not without trade.&quot;</p>
+          <p>Delilah turned to him.</p>
+          <p>He swallowed.</p>
+          <p>&quot;That place is run by cowards,&quot; he said. &quot;They close the gate after dark. Girl shows up alone, they&#x27;ll leave her outside.&quot;</p>
+          <p>Delilah considered that.</p>
+          <p>Then she looked at Lady.</p>
+          <p>Lady had already moved to the road east.</p>
+          <p>Of course she had.</p>
+          <p>Delilah almost smiled.</p>
+          <p>&quot;She won&#x27;t be alone.&quot;</p>
+          <p>Mara climbed down from the wagon. Her feet touched the dirt and nearly failed her. Delilah did not catch her. Lady came close enough for the girl to put one trembling hand against the thick fur along her shoulder.</p>
+          <p>Mara froze.</p>
+          <p>Lady allowed it.</p>
+          <p>That was all.</p>
+          <p>Scar-Cheek watched the girl steady herself against the dire wolf and seemed to understand, all at once, that the world had chosen a side.</p>
+          <p>&quot;What about me?&quot; he asked.</p>
+          <p>Delilah picked up the dropped fifth arrow.</p>
+          <p>The head was still clean.</p>
+          <p>Good.</p>
+          <p>&quot;You gave me what I needed.&quot;</p>
+          <p>Hope touched his face.</p>
+          <p>Ugly thing.</p>
+          <p>&quot;So I can go?&quot;</p>
+          <p>Delilah slid the arrow back into its place.</p>
+          <p>Five again.</p>
+          <p>&quot;No.&quot;</p>
+          <p>His hope died correctly.</p>
+          <p>He reached for his belt with the ruined hand, forgetting it could no longer close.</p>
+          <p>Delilah let him remember.</p>
+          <p>Then she stepped in.</p>
+          <p>The spear was too long for this distance.</p>
+          <p>The bow was irrelevant.</p>
+          <p>So her hand went to the knife.</p>
+          <p>The black blade came free without catching a single ember&#x27;s worth of light.</p>
+          <p>Scar-Cheek saw it.</p>
+          <p>Or maybe he saw the absence where it should have been.</p>
+          <p>&quot;Wait.&quot;</p>
+          <p>People said that often.</p>
+          <p>As if time belonged to them until they gave it permission to continue.</p>
+          <p>Delilah entered the final distance.</p>
+          <p>No swing.</p>
+          <p>No flourish.</p>
+          <p>Not yet.</p>
+          <p>The knife went in beneath the ribs, angled up, precise enough to end him and close enough that his last breath touched her cheek.</p>
+          <p>His eyes widened.</p>
+          <p>He understood the name then.</p>
+          <p>Most did, if they had a second left.</p>
+          <p>Delilah gave the blade a small turn before she withdrew it.</p>
+          <p>Not necessary.</p>
+          <p>Not useful.</p>
+          <p>Hers.</p>
+          <p>Mara looked away.</p>
+          <p>Lady did not.</p>
+          <p>Delilah wiped the blade on Scar-Cheek&#x27;s coat and returned it to its sheath.</p>
+          <p>The camp settled.</p>
+          <p>Bodies.</p>
+          <p>Ash.</p>
+          <p>Wind.</p>
+          <p>No laughter now.</p>
+          <p>Better.</p>
+          <p>Delilah recovered the arrows she could recover. Three were clean enough. One had broken inside the bus man&#x27;s skull. The fifth returned whole.</p>
+          <p>Four arrows, then.</p>
+          <p>For now.</p>
+          <p>She did not like that.</p>
+          <p>Lady watched her from the road.</p>
+          <p>&quot;Don&#x27;t start,&quot; Delilah said.</p>
+          <p>Lady blinked.</p>
+          <p>Delilah lowered her voice, roughening it into the old imitation she used only when no one dangerous remained standing.</p>
+          <p>&quot;Delilah, five is enough only when you still have five.&quot;</p>
+          <p>Mara stared at her.</p>
+          <p>Delilah slid the recovered arrows into the quiver.</p>
+          <p>&quot;She worries.&quot;</p>
+          <p>Lady turned away, offended in exactly the way a wolf could not be offended.</p>
+          <p>Delilah looked toward the east road. Six miles. Blue gate. A frightened child. Four arrows. One dead camp. One missing piece.</p>
+          <p>There had been a seventh man.</p>
+          <p>She had felt him after the fifth arrow, somewhere beyond the bus, watching the shape of the fight instead of joining it. He had not run in panic. He had withdrawn with purpose.</p>
+          <p>That mattered.</p>
+          <p>But not more than the girl.</p>
+          <p>Not tonight.</p>
+          <p>Delilah lifted the spear and rested it against her shoulder.</p>
+          <p>Lady started east.</p>
+          <p>Mara followed close to her, one hand still buried in the dire wolf&#x27;s fur.</p>
+          <p>Delilah took the rear.</p>
+          <p>The fire collapsed behind them.</p>
+          <p>After a while, when the road opened and the dead camp had become only a dull orange smear behind the hills, Mara found enough courage to speak.</p>
+          <p>&quot;Is she yours?&quot;</p>
+          <p>Delilah looked at Lady.</p>
+          <p>Lady did not look back.</p>
+          <p>&quot;No.&quot;</p>
+          <p>Mara waited.</p>
+          <p>Delilah said, &quot;And I am not hers.&quot;</p>
+          <p>That seemed to confuse the girl more.</p>
+          <p>Good.</p>
+          <p>Some things were allowed to stay larger than explanation.</p>
+          <p>They walked until moonlight thinned over the old road and the wind turned cold. Behind them, far beyond sight, the seventh man moved through darkness with a story he should not have survived to tell.</p>
+          <p>He would tell it badly.</p>
+          <p>They always did.</p>
+          <p>They would say Delilah moved faster than a human should.</p>
+          <p>They would say the wolf understood words.</p>
+          <p>They would say the black weapons were cursed.</p>
+          <p>They would say the knife had a name.</p>
+          <p>Most of that was wrong.</p>
+          <p>Enough of it was useful.</p>
+          <p>Ahead, Lady stopped and looked toward the blue gate still hidden by distance.</p>
+          <p>Delilah followed her gaze.</p>
+          <p>Then she looked back once, toward the road, the bodies, the dead fire, and the man who had escaped with fear instead of wisdom.</p>
+          <p>The hunt there was finished.</p>
+          <p>The next one had already begun.</p>
+          <p>&quot;C&#x27;mon, Lady,&quot; Delilah said.</p>
+          <p>The dire wolf moved.</p>
+          <p>Delilah followed.</p>
+          <p>&quot;We&#x27;re done here.&quot;</p>
+        </article>
+
+        <div class="end-card">
+          <p class="section-label">End of Entry</p>
+          <h3>She does not stop here.</h3>
+          <p>
+            Continue Book One on Amazon. Kindle Unlimited members can read the full book at no additional cost.
+          </p>
+          <div class="button-row">
+            <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Continue the Hunt</a>
+            <a class="btn" href="index.html#books">View the Series</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Lady &amp; Delilah / A Systema Obscura Signal</div>
+      <a class="return-link" href="index.html">Return to Main Record</a>
+    </footer>
+  </main>
+</body>
+</html>
