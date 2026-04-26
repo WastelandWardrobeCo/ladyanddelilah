@@ -188,9 +188,70 @@
     .footer { padding: 34px 0 60px; color: #9f978c; text-align: center; font-size: .95rem; }
     .return-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--sans); font-size: .76rem; letter-spacing: .18em; text-transform: uppercase; color: #f2ece3; margin-top: 14px; }
 
+    .ku-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(210,106,51,.46);
+      background: linear-gradient(180deg, rgba(210,106,51,.18), rgba(111,23,16,.10));
+      color: #ffd3b8;
+      font-family: var(--sans);
+      font-size: .74rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      box-shadow: 0 0 28px rgba(210,106,51,.10);
+    }
+
+    .entry-card {
+      margin-top: 24px;
+      padding: 20px;
+      border: 1px solid rgba(210,106,51,.24);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(210,106,51,.13), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.18));
+    }
+
+    .entry-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      line-height: 1.05;
+      color: #f7f2ea;
+    }
+
+    .entry-card p {
+      margin: 0 0 16px;
+      color: #d4cbc0;
+    }
+
+    .entry-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .entry-aside {
+      padding: 18px;
+      border-left: 1px solid rgba(210,106,51,.28);
+      color: #d6cabe;
+      font-size: .98rem;
+    }
+
+    .entry-aside strong {
+      display: block;
+      color: #f7f2ea;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+
     @media (max-width: 980px) {
       .hero { min-height: auto; }
-      .hero-grid, .signal-strip { grid-template-columns: 1fr; }
+      .hero-grid, .signal-strip, .entry-grid { grid-template-columns: 1fr; }
       .hero-frame { max-width: 430px; margin: 0 auto; }
       .book-grid, .lore-grid { grid-template-columns: 1fr; }
       .book-card { max-width: 340px; margin: 0 auto; }
@@ -217,6 +278,7 @@
       <a class="brand" href="index.html">Lady &amp; Delilah</a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#field-notes">Field Notes</a>
+        <a href="chapter1.html">Free Chapter</a>
         <a href="#books" class="book-link">Books</a>
         <a href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">TikTok</a>
         <a href="https://systemaobscura.co" target="_blank" rel="noopener noreferrer">Systema Obscura</a>
@@ -240,10 +302,12 @@
           <p class="quote">
             A hunter. A dire wolf. Five arrows. One knife. No wasted motion.
           </p>
+          <div class="ku-banner">Included with Kindle Unlimited</div>
           <p class="whisper">She is already aware of you.</p>
 
           <div class="button-row">
             <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Start the Hunt</a>
+            <a class="btn" href="chapter1.html">Read Chapter One Free</a>
             <a class="btn" href="#field-notes">Read the Fragments</a>
             <a class="btn" href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">Watch the Signal</a>
           </div>
@@ -252,6 +316,39 @@
             <div class="sigil"><strong>Distance</strong><span>The Bow</span></div>
             <div class="sigil"><strong>Control</strong><span>The Spear</span></div>
             <div class="sigil"><strong>Final Room</strong><span>The Knife</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="free-entry">
+      <div class="panel">
+        <div class="panel-inner">
+          <div class="entry-grid">
+            <div>
+              <p class="section-label">Recovered Entry</p>
+              <h2 class="section-title">Read the First Battle Free</h2>
+              <p class="section-copy">
+                Before the white forest. Before the larger record. There was a road, a wrong fire, and a camp that mistook bait for control.
+              </p>
+
+              <div class="entry-card">
+                <h3>Chapter One: Five Is Enough</h3>
+                <p>
+                  The first encounter introduces the rule that follows Delilah everywhere: five arrows, no waste, no excuses.
+                </p>
+                <div class="button-row">
+                  <a class="btn primary" href="chapter1.html">Open the Record</a>
+                  <a class="btn" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Continue on Amazon</a>
+                </div>
+              </div>
+            </div>
+
+            <aside class="entry-aside">
+              <strong>Kindle Unlimited Notice</strong>
+              Book One is included with Kindle Unlimited. Members can continue the full hunt on Amazon at no additional cost.
+            </aside>
           </div>
         </div>
       </div>
