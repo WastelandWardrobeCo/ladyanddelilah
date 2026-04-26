@@ -34,9 +34,10 @@
       font-family: var(--serif);
       line-height: 1.6;
       background:
-        radial-gradient(circle at 20% 0%, rgba(159,47,30,0.18), transparent 24%),
-        radial-gradient(circle at 76% 12%, rgba(210,106,51,0.12), transparent 22%),
-        linear-gradient(180deg, #090706 0%, #040404 64%, #030303 100%);
+        radial-gradient(circle at 18% 0%, rgba(92,17,13,0.34), transparent 24%),
+        radial-gradient(circle at 82% 10%, rgba(210,106,51,0.08), transparent 22%),
+        radial-gradient(circle at 50% 55%, rgba(0,0,0,0.95), transparent 38%),
+        linear-gradient(180deg, #050303 0%, #020202 62%, #000 100%);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -475,6 +476,91 @@
       margin-top: 14px;
     }
 
+
+
+    .fragments-board {
+      position: relative;
+      max-width: 850px;
+      margin: 0 auto;
+      border: 1px solid rgba(210,106,51,.18);
+      border-radius: 24px;
+      background:
+        linear-gradient(90deg, rgba(210,106,51,.08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.22));
+      background-size: 42px 42px, auto;
+      box-shadow: inset 0 0 70px rgba(0,0,0,.45), 0 22px 70px rgba(0,0,0,.55);
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .fragments-board::before {
+      content: "OBSERVED / DO NOT APPROACH";
+      position: absolute;
+      top: 14px;
+      right: -38px;
+      transform: rotate(13deg);
+      border: 1px solid rgba(210,106,51,.26);
+      color: rgba(238,231,222,.22);
+      font-family: var(--sans);
+      font-size: .62rem;
+      letter-spacing: .22em;
+      padding: 7px 42px;
+      text-transform: uppercase;
+    }
+
+    .fragment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .fragment {
+      min-height: 138px;
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-left: 2px solid rgba(210,106,51,.55);
+      border-radius: 18px;
+      background: rgba(0,0,0,.28);
+      box-shadow: inset 0 0 35px rgba(0,0,0,.28);
+    }
+
+    .fragment .tag {
+      display: block;
+      margin-bottom: 10px;
+      font-family: var(--sans);
+      font-size: .62rem;
+      letter-spacing: .22em;
+      color: rgba(178,167,154,.86);
+      text-transform: uppercase;
+    }
+
+    .fragment p {
+      margin: 0;
+      color: #f1e8dc;
+      font-size: 1.05rem;
+      line-height: 1.34;
+    }
+
+    .fragment p + p {
+      margin-top: 6px;
+      color: rgba(241,232,220,.66);
+    }
+
+    .fragment-feature {
+      grid-column: 1 / -1;
+      min-height: 0;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(210,106,51,.13), transparent 30%),
+        rgba(0,0,0,.36);
+    }
+
+    .fragment-feature p {
+      font-size: clamp(1.25rem, 2vw, 1.75rem);
+      line-height: 1.18;
+    }
+
     @media (max-width: 980px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-frame { max-width: 420px; margin: 0 auto; }
@@ -484,7 +570,9 @@
 
     @media (max-width: 760px) {
       .book-grid,
-      .social-grid { grid-template-columns: minmax(220px, 360px); }
+      .social-grid,
+      .fragment-grid { grid-template-columns: minmax(220px, 360px); }
+      .fragment-feature { grid-column: auto; }
       .stats-strip { grid-template-columns: 1fr; }
     }
 
@@ -505,6 +593,7 @@
       <a class="brand" href="index.html">Lady &amp; Delilah</a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#books" class="book-link">Books</a>
+        <a href="#fragments">Field Notes</a>
         <a href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer" class="signal-link">TikTok</a>
         <a href="https://systemaobscura.co" target="_blank" rel="noopener noreferrer">Systema Obscura</a>
       </nav>
@@ -522,10 +611,10 @@
           <p class="eyebrow">Field Signal Active</p>
           <h1>Lady &amp; Delilah</h1>
           <p class="dek">
-            A dark fantasy survival series about a hunter, her oversized dire wolf, and the things that learn too late they are being tracked.
+            A dark fantasy survival series about a hunter, her oversized dire wolf, and the things that learn too late the hunt has already solved for them.
           </p>
           <p class="quote">
-            A hunter. A wolf. Five arrows. And a forest that has started watching back.
+            A hunter. A wolf. Five arrows. The road keeps count. So does she.
           </p>
           <p class="hero-note">Books available now on Amazon</p>
 
@@ -571,6 +660,62 @@
               <h3>Five Arrows</h3>
               <p>Delilah carries exactly five. Count them before the hunt begins. Count them again after.</p>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fragments">
+      <div class="panel">
+        <div class="panel-inner">
+          <div class="section-head">
+            <p class="section-label">Recovered Fragments</p>
+            <h2 class="section-title">Field Notes</h2>
+            <p class="section-copy">
+              Small lines found along the road. Some are warnings. Some are measurements. None are decorative.
+            </p>
+          </div>
+
+          <div class="fragments-board" aria-label="Lady and Delilah quote board">
+            <div class="fragment-grid">
+              <article class="fragment fragment-feature">
+                <span class="tag">Observed Line / Delilah</span>
+                <p>She did not fight men.</p>
+                <p>She solved them.</p>
+              </article>
+
+              <article class="fragment">
+                <span class="tag">Weapon Record</span>
+                <p>The bow was discipline.</p>
+                <p>The spear was control.</p>
+                <p>The knife was the last room in the house.</p>
+              </article>
+
+              <article class="fragment">
+                <span class="tag">Field Rule</span>
+                <p>Five arrows made a person honest.</p>
+                <p>Every shot had to deserve leaving her hand.</p>
+              </article>
+
+              <article class="fragment">
+                <span class="tag">Lady</span>
+                <p>No command.</p>
+                <p>No gesture.</p>
+                <p>Lady had already chosen the right direction.</p>
+              </article>
+
+              <article class="fragment">
+                <span class="tag">Distance</span>
+                <p>Fast men wasted motion and called it speed.</p>
+                <p>Delilah removed everything that did not matter.</p>
+              </article>
+
+              <article class="fragment">
+                <span class="tag">Final Signal</span>
+                <p>C&rsquo;mon, Lady.</p>
+                <p>We&rsquo;re done here.</p>
+              </article>
+            </div>
           </div>
         </div>
       </div>
