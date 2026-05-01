@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Read Chapter One of Lady & Delilah by David McNeal. A hunter. A dire wolf. Five arrows. One knife." />
-  <title>Read Chapter One | Lady & Delilah</title>
+  <meta name="description" content="Read the opening sample of Lady & Delilah by David McNeal. The fire was wrong. A hunter. A dire wolf. Five arrows. One knife." />
+  <meta property="og:title" content="Read the Opening | Lady & Delilah" />
+  <meta property="og:description" content="The fire was wrong. Read the opening sample of Lady & Delilah by David McNeal." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#090604" />
+  <title>Read the Opening | Lady & Delilah by David McNeal</title>
   <style>
     :root {
       --bg: #020202;
@@ -315,6 +319,109 @@
       margin-top: 14px;
     }
 
+
+
+    .byline {
+      margin: -2px 0 16px;
+      font-size: .98rem;
+      color: #dacfc2;
+      font-style: italic;
+    }
+
+    .tiny-proof {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 14px auto 0;
+      font-family: var(--sans);
+      font-size: .7rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #c5b9ab;
+    }
+
+    .tiny-proof span {
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .reading-anchor { scroll-margin-top: 92px; }
+
+    .micro-cta {
+      max-width: 650px;
+      margin: 32px auto;
+      padding: 22px;
+      border: 1px solid rgba(210,106,51,.24);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(210,106,51,.075), rgba(255,255,255,.018));
+      text-align: center;
+    }
+
+    .micro-cta p {
+      margin: 0 auto 14px;
+      color: #ddd2c5;
+      max-width: 42ch;
+      font-size: 1.02rem;
+    }
+
+    .micro-cta strong { color: #fff2e6; }
+
+    .sample-break {
+      margin: 1.35em 0;
+      padding: 1em 1.1em;
+      border-left: 3px solid rgba(210,106,51,.72);
+      background: rgba(210,106,51,.055);
+      color: #f2dfcf;
+      font-style: italic;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 14px;
+      transform: translateX(-50%);
+      z-index: 200;
+      width: min(calc(100% - 28px), 760px);
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px 10px 16px;
+      border: 1px solid rgba(210,106,51,.36);
+      border-radius: 999px;
+      background: rgba(7,4,3,.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      font-family: var(--sans);
+    }
+
+    .sticky-cta span {
+      color: #e9ddd0;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sticky-cta a {
+      flex: 0 0 auto;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(210,106,51,.28), rgba(111,23,16,.18));
+      border: 1px solid rgba(210,106,51,.44);
+      color: #fff4ea;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 701px) { .sticky-cta { display: flex; } }
+
     @media (max-width: 700px) {
       .topbar-inner { flex-direction: column; align-items: flex-start; }
       .nav { justify-content: flex-start; }
@@ -322,8 +429,26 @@
       .btn { width: 100%; }
       .brand { letter-spacing: .24em; }
       .chapter-text p:first-child::first-letter { font-size: 3.8rem; }
+      .hero { padding-top: 34px; }
+      .nav a:not(.book-link) { display: none; }
+      .sticky-cta { display: flex; bottom: 10px; border-radius: 22px; }
+      .sticky-cta span { font-size: .68rem; }
+      .sticky-cta a { font-size: .66rem; padding: 9px 11px; }
+      body { padding-bottom: 78px; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Lady & Delilah",
+    "author": { "@type": "Person", "name": "David McNeal" },
+    "genre": "Dark fantasy thriller",
+    "url": "https://ladyanddelilah.com/chapter1.html",
+    "description": "Read the opening sample of Lady & Delilah by David McNeal. The fire was wrong."
+  }
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -331,34 +456,40 @@
       <a class="brand" href="index.html">Lady &amp; Delilah</a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
-        <a href="index.html#books" class="book-link">Books</a>
-        <a href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <a href="https://systemaobscura.co" target="_blank" rel="noopener noreferrer">Systema Obscura</a>
+        <a href="#sample">Read Sample</a>
+        <a href="https://www.amazon.com/dp/B0GXL5Q392" class="book-link" target="_blank" rel="noopener noreferrer">Get the Book</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <p class="eyebrow">Recovered Entry / Book One</p>
+      <p class="eyebrow">Book One / Opening Sample</p>
       <h1>Five Is Enough</h1>
+      <p class="byline">Lady &amp; Delilah by David McNeal</p>
       <p class="dek">
-        The first battle. The first rule. The moment the road learns what Delilah and Lady are.
+        This is how it begins. No summary. No sales pitch. Just the road, the fire, and the mistake they made.
       </p>
-      <div class="alert-line">Book One is included with Kindle Unlimited</div>
+      <div class="alert-line">Included with Kindle Unlimited</div>
       <div class="button-row">
-        <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Continue the Hunt</a>
-        <a class="btn ghost" href="index.html">Back to Main Site</a>
+        <a class="btn primary" href="#sample">Start Reading</a>
+        <a class="btn ghost" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Get the Book</a>
+      </div>
+      <div class="tiny-proof" aria-label="Book details">
+        <span>Dark Fantasy Thriller</span>
+        <span>A Hunter</span>
+        <span>A Dire Wolf</span>
+        <span>Five Arrows</span>
       </div>
     </section>
 
-    <section class="reader-panel" aria-label="Chapter One reading sample">
+    <section class="reader-panel reading-anchor" id="sample" aria-label="Chapter One reading sample">
       <div class="reader-inner">
         <div class="chapter-head">
           <p class="chapter-label">Chapter One</p>
           <h2>Five Is Enough</h2>
           <p class="chapter-note">
-            This is how it begins. Read the opening encounter, then continue the hunt on Amazon.
+            Read the opening sample. If the fire gets under your skin, the full hunt continues on Amazon.
           </p>
         </div>
 
@@ -381,6 +512,12 @@
           <p>Other people had a name for that one.</p>
           <p>Delilah did not.</p>
           <p>Names gave things more room than they deserved.</p>
+
+          <div class="micro-cta" aria-label="Continue reading prompt">
+            <p><strong>Already in?</strong> The full book is live on Amazon and included with Kindle Unlimited.</p>
+            <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Continue the Hunt</a>
+          </div>
+
           <p>Below, one of the men laughed.</p>
           <p>Too loud.</p>
           <p>There were not four men.</p>
@@ -393,7 +530,7 @@
           <p>Delilah set the first arrow to string.</p>
           <p>The bow bent without sound.</p>
           <p>She breathed out.</p>
-          <p><em style="opacity:.68;">This is where most stories would slow down.</em></p>
+          <p class="sample-break">This is where most stories would slow down.</p>
           <p>The arrow left.</p>
           <p>The man in the ditch dropped before the string finished returning.</p>
           <p>No cry.</p>
@@ -419,5 +556,9 @@
       <a class="return-link" href="index.html">Back to Main Site</a>
     </footer>
   </main>
+  <div class="sticky-cta" role="complementary" aria-label="Continue reading Lady and Delilah">
+    <span>Hooked by the fire?</span>
+    <a href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Continue</a>
+  </div>
 </body>
 </html>
