@@ -484,7 +484,27 @@
       .sticky-cta a { font-size: .66rem; padding: 9px 11px; }
       body { padding-bottom: 78px; }
     }
-  </style>
+  
+/* --- Tuning pass (visibility + KU pill) --- */
+.hero::before {
+  opacity: .78 !important;
+}
+
+.hero::after {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.08), rgba(0,0,0,.62) 33%, rgba(0,0,0,.62) 67%, rgba(0,0,0,.08)),
+    linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.58)) !important;
+}
+
+.alert-line {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+</style>
 
   <script type="application/ld+json">
   {
