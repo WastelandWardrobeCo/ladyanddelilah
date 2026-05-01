@@ -504,6 +504,53 @@
   padding-right: 18px;
 }
 
+
+/* --- Final hero visibility fix: keep center readable, let Delilah + Lady show --- */
+.hero {
+  filter: brightness(1.12) contrast(1.08);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.35) 28%,
+      rgba(0,0,0,.35) 72%,
+      rgba(0,0,0,0) 100%
+    ),
+    linear-gradient(180deg,
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.55)
+    ),
+    url("./assets/lady-delilah-hero-bg.png") center / cover no-repeat !important;
+  opacity: 1 !important;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: none !important;
+  z-index: -1;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    filter: brightness(1.08) contrast(1.05);
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.62)),
+      url("./assets/lady-delilah-hero-bg.png") center top / cover no-repeat !important;
+    opacity: 1 !important;
+  }
+}
+
 </style>
 
   <script type="application/ld+json">
