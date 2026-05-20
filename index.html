@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Lady & Delilah: a dark fantasy hunt-record from Systema Obscura. A hunter. A dire wolf. Five arrows. One knife. No wasted motion." />
-  <title>Lady & Delilah | The Hunt Record</title>
+  <title>Lady &amp; Delilah | The Hunt Record</title>
   <style>
     :root {
       --bg: #020202;
@@ -18,7 +18,7 @@
       --dim: #776f66;
       --accent: #d26a33;
       --accent-2: #9f2f1e;
-      --danger: #6f1710;
+      --danger: #a71912;
       --shadow: 0 24px 90px rgba(0,0,0,.72);
       --radius: 28px;
       --radius-lg: 42px;
@@ -36,10 +36,9 @@
       font-family: var(--serif);
       line-height: 1.6;
       background:
-        radial-gradient(circle at 16% 0%, rgba(111,23,16,0.36), transparent 24%),
-        radial-gradient(circle at 80% 16%, rgba(210,106,51,0.095), transparent 22%),
-        radial-gradient(circle at 50% 54%, rgba(0,0,0,0.96), transparent 42%),
-        linear-gradient(180deg, #050302 0%, #020202 66%, #000 100%);
+        radial-gradient(circle at 14% 0%, rgba(111,23,16,0.36), transparent 25%),
+        radial-gradient(circle at 86% 10%, rgba(210,106,51,0.10), transparent 20%),
+        linear-gradient(180deg, #030201 0%, #020202 68%, #000 100%);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
@@ -51,12 +50,12 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      opacity: .075;
+      opacity: .06;
       background-image:
-        linear-gradient(rgba(255,255,255,.32) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.26) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
       background-size: 72px 72px;
-      mask-image: radial-gradient(circle at 50% 6%, black, transparent 72%);
+      mask-image: radial-gradient(circle at 50% 10%, black, transparent 72%);
     }
 
     body::after {
@@ -67,8 +66,8 @@
       pointer-events: none;
       opacity: .12;
       background:
-        linear-gradient(180deg, transparent, rgba(0,0,0,.56)),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 1px, transparent 1px, transparent 5px);
+        repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 1px, transparent 1px, transparent 5px),
+        radial-gradient(circle at 50% 50%, transparent, rgba(0,0,0,.45));
       mix-blend-mode: soft-light;
     }
 
@@ -105,52 +104,236 @@
       white-space: nowrap;
     }
 
-    .nav { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: flex-end; font-family: var(--sans); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: #bbb2a7; }
+    .nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-family: var(--sans);
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #bbb2a7;
+    }
+
     .nav a { padding: 9px 10px; border-radius: 999px; }
     .nav a:hover, .nav a:focus-visible, .return-link:hover, .return-link:focus-visible { color: #fff; }
     .nav .book-link { padding: 10px 15px; border: 1px solid rgba(210,106,51,.36); background: linear-gradient(180deg, rgba(210,106,51,.20), rgba(111,23,16,.12)); color: #f7f2ea; box-shadow: 0 0 28px rgba(210,106,51,.12); }
 
-    .hero { min-height: calc(100vh - 72px); display: grid; align-items: center; padding: 44px 0 34px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(260px, 410px) 1fr; gap: 46px; align-items: center; }
-
-    .hero-frame {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: var(--shadow), 0 0 80px rgba(111,23,16,.18);
-      background: #f7f4ee;
-      isolation: isolate;
-      aspect-ratio: 1 / 1;
-      display: flex;
+    .tiktok-link {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 22px;
-      transform: rotate(-.35deg);
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.055);
+      color: #fff;
     }
 
-    .hero-frame::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 18%, rgba(210,106,51,.12), transparent 30%); z-index: 2; pointer-events: none; mix-blend-mode: multiply; }
-    .hero-frame::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 0 62px rgba(0,0,0,.16); z-index: 3; pointer-events: none; }
-    .hero-frame img { width: 100%; height: 100%; object-fit: contain; filter: contrast(1.08) saturate(.95); position: relative; z-index: 1; }
+    .tiktok-mark {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      display: inline-grid;
+      place-items: center;
+      background: #fff;
+      color: #050505;
+      font-family: var(--sans);
+      font-weight: 900;
+      font-size: .72rem;
+      letter-spacing: 0;
+      line-height: 1;
+    }
 
-    .eyebrow, .section-label, .card-kicker { margin: 0 0 12px; font-family: var(--sans); font-size: .74rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
-    h1 { margin: 0 0 14px; font-size: clamp(2.8rem, 6.2vw, 6.8rem); line-height: .88; font-weight: 500; color: #f8f0e6; letter-spacing: -.045em; }
-    .dek { margin: 0 0 18px; max-width: 46ch; color: #ded1c3; font-size: clamp(1.08rem, 1.45vw, 1.35rem); }
-    .quote { margin: 0 0 18px; padding-left: 18px; border-left: 1px solid rgba(210,106,51,.44); color: #f6eadc; max-width: 46ch; font-size: 1.08rem; }
-    .whisper { margin: 0 0 24px; color: #a99d91; font-family: var(--sans); font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
-    .hero-note { margin: 0 0 24px; color: #f0e3d3; font-size: .9rem; font-family: var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .cinematic-hero {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh - 69px);
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: #020202;
+    }
+
+    .cinematic-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: url("./assets/lady-delilah-main-hero.png") center center / cover no-repeat;
+      transform: scale(1.015);
+      filter: brightness(.92) contrast(1.08) saturate(.96);
+    }
+
+    .cinematic-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.70) 28%, rgba(0,0,0,.32) 52%, rgba(0,0,0,.18) 76%, rgba(0,0,0,.62) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.08) 34%, rgba(0,0,0,.86) 100%);
+    }
+
+    .hero-content {
+      width: min(calc(100% - 48px), var(--max));
+      margin: 0 auto;
+      padding: 74px 0 62px;
+      display: grid;
+      grid-template-columns: minmax(280px, 540px) 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-copy { max-width: 560px; }
+
+    .eyebrow, .section-label, .card-kicker {
+      margin: 0 0 12px;
+      font-family: var(--sans);
+      font-size: .74rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-kill-line {
+      margin: 0 0 28px;
+      font-family: var(--sans);
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: #efe7de;
+      font-size: clamp(.76rem, 1.2vw, 1rem);
+    }
+
+    .hero-kill-line strong {
+      display: inline-block;
+      margin-top: 6px;
+      color: #b71912;
+      letter-spacing: .48em;
+      font-weight: 500;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(3.5rem, 8.2vw, 7.6rem);
+      line-height: .86;
+      font-weight: 500;
+      color: #f8f0e6;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      text-shadow: 0 12px 40px rgba(0,0,0,.85);
+    }
+
+    h1 .and {
+      display: block;
+      color: #b71912;
+      font-size: .42em;
+      letter-spacing: .24em;
+      margin: .12em 0 .05em;
+    }
+
+    .dek {
+      margin: 0 0 18px;
+      max-width: 46ch;
+      color: #ded1c3;
+      font-size: clamp(1.05rem, 1.45vw, 1.28rem);
+      text-shadow: 0 10px 28px rgba(0,0,0,.92);
+    }
+
+    .quote {
+      margin: 0 0 18px;
+      padding-left: 18px;
+      border-left: 1px solid rgba(210,106,51,.62);
+      color: #f6eadc;
+      max-width: 46ch;
+      font-size: 1.08rem;
+      text-shadow: 0 10px 28px rgba(0,0,0,.92);
+    }
+
+    .ku-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(210,106,51,.48);
+      background: rgba(30,9,4,.72);
+      color: #ffd3b8;
+      font-family: var(--sans);
+      font-size: .74rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      box-shadow: 0 0 28px rgba(210,106,51,.13);
+    }
 
     .button-row { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.035); color: #f7f2ea; font-family: var(--sans); font-size: .78rem; letter-spacing: .17em; text-transform: uppercase; transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease; }
-    .btn:hover, .btn:focus-visible { transform: translateY(-2px); border-color: rgba(255,255,255,0.30); background: rgba(255,255,255,0.07); box-shadow: 0 16px 34px rgba(0,0,0,.36); }
-    .btn.primary { background: linear-gradient(180deg, rgba(210,106,51,.24), rgba(111,23,16,.14)); border-color: rgba(210,106,51,.42); box-shadow: 0 0 34px rgba(210,106,51,.13); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.045);
+      color: #f7f2ea;
+      font-family: var(--sans);
+      font-size: .78rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.30);
+      background: rgba(255,255,255,0.075);
+      box-shadow: 0 16px 34px rgba(0,0,0,.36);
+    }
+
+    .btn.primary {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(210,106,51,.30), rgba(111,23,16,.18));
+      border-color: rgba(210,106,51,.50);
+      box-shadow: 0 0 34px rgba(210,106,51,.16);
+    }
+
+    .btn.primary::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      border: 1px solid rgba(210,106,51,.40);
+      opacity: .45;
+      animation: signalPulse 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .btn.tiktok-cta {
+      background: rgba(255,255,255,.92);
+      border-color: rgba(255,255,255,.70);
+      color: #050505;
+      font-weight: 700;
+      letter-spacing: .12em;
+      gap: 9px;
+    }
+
+    .btn.tiktok-cta .tiktok-mark { background: #050505; color: #fff; }
 
     .sigils { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 28px; max-width: 640px; }
-    .sigil { border: 1px solid var(--soft-line); border-radius: 18px; padding: 14px 14px 13px; background: rgba(255,255,255,.025); }
+    .sigil { border: 1px solid rgba(255,255,255,.16); border-radius: 18px; padding: 14px 14px 13px; background: rgba(0,0,0,.28); backdrop-filter: blur(8px); }
     .sigil strong { display: block; font-family: var(--sans); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
     .sigil span { display: block; color: #f6eee4; font-size: 1rem; }
 
-    .section { padding: 26px 0; }
+    .section { padding: 32px 0; }
+    .section:first-of-type { padding-top: 46px; }
     .panel { position: relative; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(180deg, rgba(255,255,255,.042), rgba(255,255,255,.012)); box-shadow: var(--shadow); overflow: hidden; isolation: isolate; }
     .panel::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 26% 0%, rgba(210,106,51,.08), transparent 25%), linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.32)); z-index: 0; pointer-events: none; }
     .panel::after { content: ""; position: absolute; inset: 0; border-radius: inherit; border: 1px solid rgba(255,255,255,.035); pointer-events: none; z-index: 3; }
@@ -159,6 +342,15 @@
     .section-title { margin: 0 0 8px; font-size: clamp(1.7rem, 2.5vw, 2.7rem); line-height: 1.02; font-weight: 500; color: #f7f2ea; }
     .section-copy, .card-copy { margin: 0; color: #d4cbc0; max-width: 70ch; }
     .section-head .section-copy { margin: 0 auto; max-width: 66ch; }
+
+    .book-grid { display: grid; grid-template-columns: repeat(4, minmax(190px, 1fr)); gap: 24px; align-items: start; }
+    .book-card { text-align: center; }
+    .book-card a.cover-link, .book-card .cover-static { display: block; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,0.13); box-shadow: 0 22px 64px rgba(0,0,0,0.66); background: #090909; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    .book-card a.cover-link:hover, .book-card a.cover-link:focus-visible { transform: translateY(-4px); border-color: rgba(210,106,51,.50); box-shadow: 0 26px 78px rgba(0,0,0,0.72), 0 0 38px rgba(210,106,51,.12); }
+    .book-card img { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; }
+    .book-title { margin: 16px 0 5px; font-size: 1.28rem; line-height: 1.06; font-weight: 600; color: #f7f2ea; }
+    .book-meta { margin: 0 0 8px; font-family: var(--sans); font-size: .70rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .book-blurb { margin: 0 auto 14px; max-width: 31ch; color: #cfc6ba; font-size: .94rem; }
 
     .field-board { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .fragment { position: relative; min-height: 142px; padding: 20px 20px 18px; border-radius: 20px; border: 1px solid rgba(255,255,255,.11); border-left: 2px solid rgba(210,106,51,.55); background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(0,0,0,.24)); box-shadow: 0 18px 46px rgba(0,0,0,.38); }
@@ -171,15 +363,6 @@
     .lore-card h3 { margin: 0 0 10px; color: #f5eee4; font-size: 1.25rem; line-height: 1.1; font-weight: 500; }
     .lore-card p { margin: 0; color: #cfc4b7; }
 
-    .book-grid { display: grid; grid-template-columns: repeat(4, minmax(210px, 1fr)); gap: 26px; align-items: start; }
-    .book-card { text-align: center; }
-    .book-card a.cover-link, .book-card .cover-static { display: block; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,0.13); box-shadow: 0 22px 64px rgba(0,0,0,0.66); background: #090909; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
-    .book-card a.cover-link:hover, .book-card a.cover-link:focus-visible { transform: translateY(-4px); border-color: rgba(210,106,51,.50); box-shadow: 0 26px 78px rgba(0,0,0,0.72), 0 0 38px rgba(210,106,51,.12); }
-    .book-card img { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; }
-    .book-title { margin: 16px 0 5px; font-size: 1.35rem; line-height: 1.06; font-weight: 600; color: #f7f2ea; }
-    .book-meta { margin: 0 0 8px; font-family: var(--sans); font-size: .70rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-    .book-blurb { margin: 0 auto 14px; max-width: 31ch; color: #cfc6ba; font-size: .96rem; }
-
     .signal-strip { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; align-items: stretch; }
     .signal-card { border-radius: 24px; border: 1px solid var(--soft-line); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.24)); padding: 26px; }
     .signal-card h3 { margin: 0 0 8px; font-size: 1.6rem; line-height: 1.05; font-weight: 500; }
@@ -188,96 +371,9 @@
     .footer { padding: 34px 0 60px; color: #9f978c; text-align: center; font-size: .95rem; }
     .return-link { display: inline-flex; align-items: center; gap: 10px; font-family: var(--sans); font-size: .76rem; letter-spacing: .18em; text-transform: uppercase; color: #f2ece3; margin-top: 14px; }
 
-    .ku-banner {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 18px;
-      padding: 10px 15px;
-      border-radius: 999px;
-      border: 1px solid rgba(210,106,51,.46);
-      background: linear-gradient(180deg, rgba(210,106,51,.18), rgba(111,23,16,.10));
-      color: #ffd3b8;
-      font-family: var(--sans);
-      font-size: .74rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      box-shadow: 0 0 28px rgba(210,106,51,.10);
-    }
-
-    .entry-card {
-      margin-top: 24px;
-      padding: 20px;
-      border: 1px solid rgba(210,106,51,.24);
-      border-radius: var(--radius);
-      background:
-        radial-gradient(circle at 12% 0%, rgba(210,106,51,.13), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.18));
-    }
-
-    .entry-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.35rem;
-      line-height: 1.05;
-      color: #f7f2ea;
-    }
-
-    .entry-card p {
-      margin: 0 0 16px;
-      color: #d4cbc0;
-    }
-
-    .entry-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 26px;
-      align-items: center;
-    }
-
-    .entry-aside {
-      padding: 18px;
-      border-left: 1px solid rgba(210,106,51,.28);
-      color: #d6cabe;
-      font-size: .98rem;
-    }
-
-    .entry-aside strong {
-      display: block;
-      color: #f7f2ea;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-
-    @media (max-width: 980px) {
-      .hero { min-height: auto; }
-      .hero-grid, .signal-strip, .entry-grid { grid-template-columns: 1fr; }
-      .hero-frame { max-width: 430px; margin: 0 auto; }
-      .book-grid, .lore-grid { grid-template-columns: 1fr; }
-      .book-card { max-width: 340px; margin: 0 auto; }
-    }
-
-
-
-    .btn.primary {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn.primary::after {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      border: 1px solid rgba(210,106,51,.38);
-      opacity: .45;
-      animation: signalPulse 3.2s ease-in-out infinite;
-      pointer-events: none;
-    }
-
     @keyframes signalPulse {
       0%, 100% { opacity: .22; box-shadow: 0 0 0 rgba(210,106,51,0); }
-      50% { opacity: .75; box-shadow: 0 0 28px rgba(210,106,51,.20); }
+      50% { opacity: .78; box-shadow: 0 0 28px rgba(210,106,51,.22); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -286,18 +382,39 @@
       .btn.primary::after { animation: none; }
     }
 
+    @media (max-width: 1080px) {
+      .book-grid { grid-template-columns: repeat(2, minmax(210px, 1fr)); }
+      .book-card { max-width: 340px; margin: 0 auto; }
+    }
+
+    @media (max-width: 980px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .cinematic-hero::after {
+        background:
+          linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.48)),
+          linear-gradient(180deg, rgba(0,0,0,.36), rgba(0,0,0,.90));
+      }
+      .signal-strip { grid-template-columns: 1fr; }
+      .lore-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 720px) {
-      .field-board, .sigils { grid-template-columns: 1fr; }
+      .field-board, .sigils, .book-grid { grid-template-columns: 1fr; }
+      .cinematic-hero { min-height: auto; }
+      .cinematic-hero::before { background-position: 62% center; }
+      .hero-content { padding: 58px 0 52px; }
+      .hero-kill-line { letter-spacing: .28em; }
     }
 
     @media (max-width: 640px) {
       .topbar-inner { flex-direction: column; align-items: flex-start; }
       .nav { justify-content: flex-start; gap: 8px; }
-      .hero { padding-top: 24px; }
       .panel-inner { padding: 25px 20px 27px; }
       .button-row { flex-direction: column; }
       .btn { width: 100%; }
       .brand { letter-spacing: .26em; }
+      h1 { font-size: clamp(3rem, 15vw, 4.6rem); }
+      .nav a:not(.book-link):not(.tiktok-link) { display: none; }
     }
   </style>
 </head>
@@ -306,39 +423,33 @@
     <div class="topbar-inner">
       <a class="brand" href="index.html">Lady &amp; Delilah</a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#field-notes">Field Notes</a>
-        <a href="start">Get a Taste</a>
         <a href="#books" class="book-link">Books</a>
-        <a href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="start">Read the Opening</a>
+        <a href="#field-notes">Fragments</a>
+        <a class="tiktok-link" href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer"><span class="tiktok-mark">♪</span><span>TikTok</span></a>
         <a href="https://systemaobscura.co" target="_blank" rel="noopener noreferrer">Systema Obscura</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div class="hero-grid">
-        <div class="hero-frame" aria-label="Lady and Delilah series mark">
-          <img src="./assets/lady-logo.png" alt="Lady and Delilah logo" />
-        </div>
-
+  <main>
+    <section class="cinematic-hero" id="top" aria-label="Lady and Delilah homepage hero">
+      <div class="hero-content">
         <div class="hero-copy">
-          <p class="eyebrow">Recovered Hunt Record / Active Signal</p>
-          <h1>Lady &amp;<br />Delilah</h1>
+          <p class="hero-kill-line">Not everyone she sees...<br /><strong>dies.</strong></p>
+          <p class="eyebrow">A Systema Obscura Series</p>
+          <h1>Lady <span class="and">and</span> Delilah</h1>
           <p class="dek">
-            You were not supposed to find this road. Now that you have, keep your hands visible and do not mistake the wolf for the warning.
+            A dark fantasy hunt record about a hunter, a dire wolf, and the places that mistake survival for mercy.
           </p>
           <p class="quote">
-            A hunter. A dire wolf. Five arrows. One knife. No wasted motion.
+            Five arrows. One knife. No wasted motion.
           </p>
           <div class="ku-banner">Included with Kindle Unlimited</div>
-          <p class="whisper">She is already aware of you.</p>
-
           <div class="button-row">
-            <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Start the Hunt</a>
-            <a class="btn" href="start">Get a Taste</a>
-            <a class="btn" href="#field-notes">Read the Fragments</a>
-            <a class="btn" href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">Watch the Signal</a>
+            <a class="btn primary" href="start">Read the Opening</a>
+            <a class="btn" href="#books">Enter the Books</a>
+            <a class="btn tiktok-cta" href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer"><span class="tiktok-mark">♪</span> TikTok</a>
           </div>
 
           <div class="sigils" aria-label="Series identity markers">
@@ -347,200 +458,170 @@
             <div class="sigil"><strong>Final Room</strong><span>The Knife</span></div>
           </div>
         </div>
+        <div aria-hidden="true"></div>
       </div>
     </section>
 
-
-    <section class="section" id="free-entry">
-      <div class="panel">
-        <div class="panel-inner">
-          <div class="entry-grid">
-            <div>
-              <p class="section-label">Recovered Entry</p>
-              <h2 class="section-title">Get a Taste</h2>
+    <div class="wrap">
+      <section class="section" id="books">
+        <div class="panel">
+          <div class="panel-inner">
+            <div class="section-head">
+              <p class="section-label">Series Archive</p>
+              <h2 class="section-title">Enter the Books</h2>
               <p class="section-copy">
-                Before the white forest. Before the larger record. There was a road, a wrong fire, and the first moment the hunt became visible.
+                Begin with the first hunt. Continue into the white forest. Four records are live. The next signal is already forming.
               </p>
-
-              <div class="entry-card">
-                <h3>Chapter One: Five Is Enough</h3>
-                <p>
-                  A short recovered sample from the first encounter: five arrows, no waste, no excuses.
-                </p>
-                <div class="button-row">
-                  <a class="btn primary" href="start">Get a Taste</a>
-                  <a class="btn" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Continue on Amazon</a>
-                </div>
-              </div>
             </div>
 
-            <aside class="entry-aside">
-              <strong>Kindle Unlimited Notice</strong>
-              Book One is included with Kindle Unlimited. Members can continue the full hunt on Amazon at no additional cost.
-            </aside>
+            <div class="book-grid">
+              <article class="book-card">
+                <a class="cover-link" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer" aria-label="Read Lady and Delilah Book One on Amazon">
+                  <img src="./assets/lady-book-cover.png" alt="Lady and Delilah Book One cover" />
+                </a>
+                <p class="book-meta">Book One</p>
+                <h3 class="book-title">Lady &amp; Delilah</h3>
+                <p class="book-blurb">The first path opens. A hunter. A wolf. Five arrows.</p>
+                <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Start Here</a>
+              </article>
+
+              <article class="book-card">
+                <a class="cover-link" href="https://www.amazon.com/dp/B0GX2SS328" target="_blank" rel="noopener noreferrer" aria-label="Read Lady and Delilah The White Tree on Amazon">
+                  <img src="./assets/lady-book-2-cover.jpg" alt="Lady and Delilah The White Tree cover" />
+                </a>
+                <p class="book-meta">Book Two</p>
+                <h3 class="book-title">The White Tree</h3>
+                <p class="book-blurb">The road darkens. Something ancient waits in the white forest.</p>
+                <a class="btn" href="https://www.amazon.com/dp/B0GX2SS328" target="_blank" rel="noopener noreferrer">Continue</a>
+              </article>
+
+              <article class="book-card">
+                <a class="cover-link" href="https://www.amazon.com/dp/B0GZ988DMD" target="_blank" rel="noopener noreferrer" aria-label="Read Lady and Delilah Book Three on Amazon">
+                  <img src="./assets/lady-book-3-cover.png" alt="Lady and Delilah Book Three cover" />
+                </a>
+                <p class="book-meta">Book Three</p>
+                <h3 class="book-title">The Hunter's Measure</h3>
+                <p class="book-blurb">The hunt tightens. What is measured does not always survive.</p>
+                <a class="btn" href="https://www.amazon.com/dp/B0GZ988DMD" target="_blank" rel="noopener noreferrer">Continue</a>
+              </article>
+
+              <article class="book-card">
+                <a class="cover-link" href="https://www.amazon.com/Lady-Delilah-Narrow-David-McNeal-ebook/dp/B0H1ZW8YG8" target="_blank" rel="noopener noreferrer" aria-label="Read Lady and Delilah Book Four on Amazon">
+                  <img src="./assets/book4.jpg" alt="Lady and Delilah Book Four cover" />
+                </a>
+                <p class="book-meta">Book Four</p>
+                <h3 class="book-title">The Narrow Dark</h3>
+                <p class="book-blurb">The road contracts. Mercy becomes smaller than the knife.</p>
+                <a class="btn" href="https://www.amazon.com/Lady-Delilah-Narrow-David-McNeal-ebook/dp/B0H1ZW8YG8" target="_blank" rel="noopener noreferrer">Continue</a>
+              </article>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="field-notes">
-      <div class="panel">
-        <div class="panel-inner">
-          <div class="section-head">
-            <p class="section-label">Recovered Fragments</p>
-            <h2 class="section-title">Field Notes From the Road</h2>
-            <p class="section-copy">
-              Not all encounters are survived. Some are only recorded after the fire goes out.
-            </p>
-          </div>
+      <section class="section">
+        <div class="panel">
+          <div class="panel-inner">
+            <div class="section-head">
+              <p class="section-label">The Shape of the Series</p>
+              <h2 class="section-title">This Is Not a Hero's Road</h2>
+              <p class="section-copy">
+                Delilah does not arrive to save the world. Lady does not ask permission to enter it. Together, they walk into places where cruelty has become organized and leave those places with fewer rooms.
+              </p>
+            </div>
 
-          <div class="field-board">
-            <article class="fragment" data-file="Entry 01 / Motion">
-              <p>She does not move fast.</p>
-              <p>She removes everything that is not the movement.</p>
-            </article>
+            <div class="lore-grid">
+              <article class="lore-card">
+                <p class="card-kicker">The Hunter</p>
+                <h3>Precision over rage.</h3>
+                <p>Delilah is not reckless. She is exact. Every step is a decision. Every weapon has a distance. Every mistake belongs to someone else.</p>
+              </article>
 
-            <article class="fragment" data-file="Entry 02 / Ammunition">
-              <p>Five arrows make a person honest.</p>
-              <p>Anything more is an excuse.</p>
-            </article>
+              <article class="lore-card">
+                <p class="card-kicker">The Wolf</p>
+                <h3>Partner, not pet.</h3>
+                <p>Lady does not follow. Lady understands. When she moves, the room changes shape around her.</p>
+              </article>
 
-            <article class="fragment" data-file="Entry 03 / Distances">
-              <p>The bow is discipline.</p>
-              <p>The spear is control. The knife is the last room in the house.</p>
-            </article>
-
-            <article class="fragment" data-file="Entry 04 / Lady">
-              <p>The wolf does not wait for command.</p>
-              <p>She reads the ending first.</p>
-            </article>
-
-            <article class="fragment" data-file="Entry 05 / Measurement">
-              <p>Some men believe they are being hunted.</p>
-              <p>They are being measured.</p>
-            </article>
-
-            <article class="fragment" data-file="Entry 06 / Exit">
-              <p>C'mon, Lady.</p>
-              <p>We're done here.</p>
-            </article>
+              <article class="lore-card">
+                <p class="card-kicker">The Rule</p>
+                <h3>Five is enough.</h3>
+                <p>Five arrows. No waste. No excuses. If the quiver empties, the story has gotten close enough to use the knife.</p>
+              </article>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="panel">
-        <div class="panel-inner">
-          <div class="section-head">
-            <p class="section-label">The Shape of the Series</p>
-            <h2 class="section-title">This Is Not a Hero's Road</h2>
-            <p class="section-copy">
-              Delilah does not arrive to save the world. Lady does not ask permission to enter it. Together, they walk into places where cruelty has become organized and leave those places with fewer rooms.
-            </p>
-          </div>
+      <section class="section" id="field-notes">
+        <div class="panel">
+          <div class="panel-inner">
+            <div class="section-head">
+              <p class="section-label">Recovered Fragments</p>
+              <h2 class="section-title">Field Notes From the Road</h2>
+              <p class="section-copy">
+                Not all encounters are survived. Some are only recorded after the fire goes out.
+              </p>
+            </div>
 
-          <div class="lore-grid">
-            <article class="lore-card">
-              <p class="card-kicker">The Hunter</p>
-              <h3>Precision over rage.</h3>
-              <p>Delilah is not reckless. She is exact. Every step is a decision. Every weapon has a distance. Every mistake belongs to someone else.</p>
-            </article>
+            <div class="field-board">
+              <article class="fragment" data-file="Entry 01 / Motion">
+                <p>She does not move fast.</p>
+                <p>She removes everything that is not the movement.</p>
+              </article>
 
-            <article class="lore-card">
-              <p class="card-kicker">The Wolf</p>
-              <h3>Partner, not pet.</h3>
-              <p>Lady does not follow. Lady understands. When she moves, the room changes shape around her.</p>
-            </article>
+              <article class="fragment" data-file="Entry 02 / Ammunition">
+                <p>Five arrows make a person honest.</p>
+                <p>Anything more is an excuse.</p>
+              </article>
 
-            <article class="lore-card">
-              <p class="card-kicker">The Rule</p>
-              <h3>Five is enough.</h3>
-              <p>Five arrows. No waste. No excuses. If the quiver empties, the story has gotten close enough to use the knife.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
+              <article class="fragment" data-file="Entry 03 / Distances">
+                <p>The bow is discipline.</p>
+                <p>The spear is control. The knife is the last room in the house.</p>
+              </article>
 
-    <section class="section" id="books">
-      <div class="panel">
-        <div class="panel-inner">
-          <div class="section-head">
-            <p class="section-label">Series Archive</p>
-            <h2 class="section-title">Enter the Books</h2>
-            <p class="section-copy">
-              Begin with the first hunt. Continue into the white forest. The next signal is already forming.
-            </p>
-          </div>
+              <article class="fragment" data-file="Entry 04 / Lady">
+                <p>The wolf does not wait for command.</p>
+                <p>She reads the ending first.</p>
+              </article>
 
-          <div class="book-grid">
-            <article class="book-card">
-              <a class="cover-link" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer" aria-label="Read Lady and Delilah Book One on Amazon">
-                <img src="./assets/lady-book-cover.png" alt="Lady and Delilah Book One cover" />
-              </a>
-              <p class="book-meta">Book One</p>
-              <h3 class="book-title">Lady &amp; Delilah</h3>
-              <p class="book-blurb">The first path opens. A hunter. A wolf. Five arrows.</p>
-              <a class="btn primary" href="https://www.amazon.com/dp/B0GXL5Q392" target="_blank" rel="noopener noreferrer">Start Here</a>
-            </article>
+              <article class="fragment" data-file="Entry 05 / Measurement">
+                <p>Some men believe they are being hunted.</p>
+                <p>They are being measured.</p>
+              </article>
 
-            <article class="book-card">
-              <a class="cover-link" href="https://www.amazon.com/dp/B0GX2SS328" target="_blank" rel="noopener noreferrer" aria-label="Read Lady and Delilah The White Tree on Amazon">
-                <img src="./assets/lady-book-2-cover.jpg" alt="Lady and Delilah The White Tree cover" />
-              </a>
-              <p class="book-meta">Book Two</p>
-              <h3 class="book-title">The White Tree</h3>
-              <p class="book-blurb">The road darkens. Something ancient waits in the white forest.</p>
-              <a class="btn" href="https://www.amazon.com/dp/B0GX2SS328" target="_blank" rel="noopener noreferrer">Continue</a>
-            </article>
-
-            <article class="book-card">
-  <a class="cover-link" href="https://www.amazon.com/dp/B0GZ988DMD" target="_blank" rel="noopener noreferrer" aria-label="Read Lady and Delilah Book Three on Amazon">
-    <img src="./assets/lady-book-3-cover.png" alt="Lady and Delilah Book Three cover" />
-  </a>
-  <p class="book-meta">Book Three</p>
-  <h3 class="book-title">The Hunter's Measure</h3>
-  <p class="book-blurb">The hunt tightens. What is measured does not always survive.</p>
-  <a class="btn" href="https://www.amazon.com/dp/B0GZ988DMD" target="_blank" rel="noopener noreferrer">Continue</a>
-</article>
-
-            <article class="book-card">
-              <a class="cover-link" href="https://www.amazon.com/Lady-Delilah-Narrow-David-McNeal-ebook/dp/B0H1ZW8YG8" target="_blank" rel="noopener noreferrer" aria-label="Read Lady and Delilah Book Four on Amazon">
-                <img src="./assets/books/book4.jpg" alt="Lady and Delilah Book Four cover" />
-              </a>
-              <p class="book-meta">Book Four</p>
-              <h3 class="book-title">The Narrow Dark</h3>
-              <p class="book-blurb">The road contracts. Mercy becomes smaller than the knife.</p>
-              <a class="btn" href="https://www.amazon.com/Lady-Delilah-Narrow-David-McNeal-ebook/dp/B0H1ZW8YG8" target="_blank" rel="noopener noreferrer">Continue</a>
-            </article>
+              <article class="fragment" data-file="Entry 06 / Exit">
+                <p>C'mon, Lady.</p>
+                <p>We're done here.</p>
+              </article>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="signal-strip">
-        <article class="signal-card">
-          <p class="section-label">Live Signal</p>
-          <h3>Follow the road between chapters.</h3>
-          <p>Short transmissions, images, fragments, and field signals from the Lady &amp; Delilah world.</p>
-          <a class="btn primary" href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer">Open TikTok</a>
-        </article>
+      <section class="section">
+        <div class="signal-strip">
+          <article class="signal-card">
+            <p class="section-label">Live Signal</p>
+            <h3>Follow the road between chapters.</h3>
+            <p>Short transmissions, images, fragments, and field signals from the Lady &amp; Delilah world.</p>
+            <a class="btn tiktok-cta" href="https://www.tiktok.com/@ladyanddelilah" target="_blank" rel="noopener noreferrer"><span class="tiktok-mark">♪</span> TikTok</a>
+          </article>
 
-        <article class="signal-card">
-          <p class="section-label">Origin System</p>
-          <h3>Systema Obscura</h3>
-          <p>Return to the larger archive of strange transmissions, dark fiction, and other recorded impossibilities.</p>
-          <a class="btn" href="https://systemaobscura.co" target="_blank" rel="noopener noreferrer">Main Archive</a>
-        </article>
-      </div>
-    </section>
+          <article class="signal-card">
+            <p class="section-label">Origin System</p>
+            <h3>Systema Obscura</h3>
+            <p>Return to the larger archive of strange transmissions, dark fiction, and other recorded impossibilities.</p>
+            <a class="btn" href="https://systemaobscura.co" target="_blank" rel="noopener noreferrer">Main Archive</a>
+          </article>
+        </div>
+      </section>
 
-    <footer class="footer">
-      <div>Lady &amp; Delilah / A Systema Obscura Signal</div>
-      <a class="return-link" href="#top">Return to the Road</a>
-    </footer>
+      <footer class="footer">
+        <div>Lady &amp; Delilah / A Systema Obscura Signal</div>
+        <a class="return-link" href="#top">Return to the Road</a>
+      </footer>
+    </div>
   </main>
 </body>
 </html>
